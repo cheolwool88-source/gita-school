@@ -4,7 +4,7 @@ import { Layout } from './components/Layout';
 import { GuitaristCard } from './components/GuitaristCard';
 import { AIAdvisor } from './components/AIAdvisor';
 import { NavigationTab } from './types';
-import { GUITARISTS, COURSES, REVIEWS, BLOG_POSTS } from './constants';
+import { GUITARISTS, COURSES, REVIEWS, BLOG_POSTS, INSTRUCTORS } from './constants';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavigationTab>(NavigationTab.HOME);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
               </div>
               <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
                 <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-in fade-in slide-in-from-left duration-1000">
-                  이진우 기타교실
+                  이진우기타음악교습소
                 </h1>
                 <p className="text-xl md:text-2xl font-light mb-8 max-w-2xl text-slate-200">
                   “초보에서 완주까지, 당신의 기타 여정을 함께합니다.”
@@ -98,6 +98,63 @@ const App: React.FC = () => {
           </>
         );
 
+      case NavigationTab.INSTRUCTORS:
+        return (
+          <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold text-slate-900 mb-12 text-center">실력 있는 강사진</h1>
+            <div className="max-w-4xl mx-auto">
+              {INSTRUCTORS.map(instructor => (
+                <div key={instructor.id} className="flex flex-col md:flex-row bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                  <div className="md:w-2/5 relative">
+                    <img 
+                      src={instructor.imageUrl} 
+                      alt={instructor.name} 
+                      className="w-full h-full object-cover min-h-[400px]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent md:hidden" />
+                    <div className="absolute bottom-6 left-6 text-white md:hidden">
+                      <h2 className="text-3xl font-bold">{instructor.name}</h2>
+                      <p className="text-amber-400 font-medium">{instructor.position}</p>
+                    </div>
+                  </div>
+                  <div className="md:w-3/5 p-10 flex flex-col justify-center">
+                    <div className="hidden md:block mb-6">
+                      <h2 className="text-4xl font-bold text-slate-900 mb-2">{instructor.name}</h2>
+                      <p className="text-xl text-amber-600 font-semibold">{instructor.position}</p>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-sm uppercase tracking-widest text-slate-400 font-bold mb-2">전문 분야</h3>
+                        <p className="text-slate-700 font-medium">{instructor.specialty}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-sm uppercase tracking-widest text-slate-400 font-bold mb-2">주요 약력</h3>
+                        <ul className="space-y-2">
+                          {instructor.experience.map((exp, idx) => (
+                            <li key={idx} className="flex items-start text-slate-600">
+                              <span className="text-amber-500 mr-2">✦</span>
+                              {exp}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <button 
+                      onClick={() => setActiveTab(NavigationTab.CONTACT)}
+                      className="mt-10 bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-amber-600 transition-colors self-start"
+                    >
+                      강사님께 상담 신청하기
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+
       case NavigationTab.CURRICULUM:
         return (
           <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,7 +192,7 @@ const App: React.FC = () => {
           <div className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold mb-8">학원 소개</h1>
             <div className="bg-amber-50 rounded-3xl p-12 text-left mb-12 shadow-inner">
-              <h2 className="text-2xl font-bold mb-6 text-amber-900">이진우 기타교실의 철학</h2>
+              <h2 className="text-2xl font-bold mb-6 text-amber-900">이진우기타음악교습소의 철학</h2>
               <div className="space-y-6 text-slate-700 leading-relaxed">
                 <div className="flex items-start">
                   <span className="text-2xl mr-4">🎵</span>
@@ -187,7 +244,7 @@ const App: React.FC = () => {
               <div className="lg:col-span-1 space-y-8 animate-in fade-in slide-in-from-left duration-700">
                 <div>
                   <h1 className="text-4xl font-bold text-slate-900 mb-4">찾아오시는 길</h1>
-                  <p className="text-slate-600">이진우 기타교실은 여러분의 방문을 언제나 환영합니다.</p>
+                  <p className="text-slate-600">이진우기타음악교습소는 여러분의 방문을 언제나 환영합니다.</p>
                 </div>
                 
                 <div className="space-y-6">

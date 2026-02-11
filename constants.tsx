@@ -1,5 +1,5 @@
 
-import { Guitarist, Course, BlogPost, Review } from './types';
+import { Guitarist, Course, BlogPost, Review, Instructor } from './types';
 
 export const GUITARISTS: Guitarist[] = [
   {
@@ -39,6 +39,22 @@ export const GUITARISTS: Guitarist[] = [
   }
 ];
 
+export const INSTRUCTORS: Instructor[] = [
+  {
+    id: 'lee-jin-woo',
+    name: '이진우',
+    position: '한국기타협회 동두천 지부장',
+    specialty: '클래식 기타, 어쿠스틱/핑거스타일, 일렉 기타 전반',
+    experience: [
+      '한국기타협회 정회원 및 지부장',
+      '다수의 개인 레슨 및 단체 강의 경력',
+      '전문 연주자 양성 및 입시 지도',
+      '지역 문화 예술 공연 기획 및 참여'
+    ],
+    imageUrl: 'https://picsum.photos/seed/leejinwoo/600/800'
+  }
+];
+
 export const COURSES: Course[] = [
   {
     id: 'basic',
@@ -63,7 +79,7 @@ export const COURSES: Course[] = [
   },
   {
     id: 'electric',
-    title: '기타 집중반',
+    title: '일렉 기타 집중반',
     target: '락, 블루스 솔로 연주가 목표인 분',
     description: '앰프 활용법, 이펙터 세팅, 스케일 이론 및 솔로 연주를 배웁니다.',
     level: '중급'

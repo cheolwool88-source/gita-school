@@ -33,7 +33,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
             >
               <span className="text-3xl mr-2">🎸</span>
               <h1 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
-                이진우 기타교실
+                이진우기타음악교습소
               </h1>
             </div>
 
@@ -101,7 +101,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h2 className="text-xl font-bold text-white mb-4">이진우 기타교실</h2>
+              <h2 className="text-xl font-bold text-white mb-4">이진우기타음악교습소</h2>
               <p className="text-sm leading-relaxed">
                 초보에서 완주까지, 당신의 기타 여정을 함께합니다.<br />
                 체계적인 커리큘럼과 1:1 맞춤 레슨으로<br />
@@ -131,7 +131,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
             </div>
           </div>
           <div className="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-            © 2024 Lee Jin-woo Guitar Academy. All rights reserved.
+            © 2024 Lee Jin-woo Guitar Music Academy. All rights reserved.
           </div>
         </div>
       </footer>

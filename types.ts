@@ -7,6 +7,15 @@ export interface Guitarist {
   style: string;
 }
 
+export interface Instructor {
+  id: string;
+  name: string;
+  position: string;
+  specialty: string;
+  experience: string[];
+  imageUrl: string;
+}
+
 export interface Course {
   id: string;
   title: string;
