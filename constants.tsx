@@ -63,7 +63,7 @@ export const COURSES: Course[] = [
   },
   {
     id: 'electric',
-    title: '일렉 기타 집중반',
+    title: '기타 집중반',
     target: '락, 블루스 솔로 연주가 목표인 분',
     description: '앰프 활용법, 이펙터 세팅, 스케일 이론 및 솔로 연주를 배웁니다.',
     level: '중급'
