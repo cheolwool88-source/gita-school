@@ -293,6 +293,20 @@ const App: React.FC = () => {
                     {t.footer.parking}
                   </p>
                 </div>
+
+                {/* Interactive Map with specific marker */}
+                <div className="rounded-3xl overflow-hidden h-72 shadow-xl border border-slate-200 mt-6 relative group">
+                  <iframe 
+                    title="Academy Location"
+                    src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EB%8F%99%EB%91%90%EC%B2%9C%EC%8B%9C%20%EC%A4%91%EC%95%99%EB%A1%9C%20116&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                  ></iframe>
+                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 pointer-events-none transition-colors"></div>
+                </div>
               </div>
 
               <div className="lg:col-span-2">
