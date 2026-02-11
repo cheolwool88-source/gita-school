@@ -1,4 +1,6 @@
 
+export type Language = 'ko' | 'en';
+
 export interface Guitarist {
   id: string;
   name: string;
@@ -21,7 +23,7 @@ export interface Course {
   title: string;
   target: string;
   description: string;
-  level: '입문' | '초급' | '중급' | '고급';
+  level: string;
 }
 
 export interface Review {
