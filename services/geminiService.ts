@@ -2,10 +2,25 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Language } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+let aiInstance: GoogleGenAI | null = null;
+
+function getAI() {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY;
+    if (!apiKey) {
+      console.warn("GEMINI_API_KEY is missing. AI features will not work.");
+      return null;
+    }
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+}
 
 export async function getPersonalizedAdvice(level: string, goal: string, lang: Language) {
   try {
+    const ai = getAI();
+    if (!ai) return null;
+
     const langPrompt = lang === 'ko' ? '한국어로 친절하게 답변해주세요.' : 'Please answer kindly in English.';
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
